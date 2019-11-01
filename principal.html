@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="css/libs/materialize.min.css">
+<link rel="stylesheet" href="css/libs/google-fonts.css">
+<link rel="stylesheet" href="css/estilos.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo de digitação</title>
+</head>
+<div class="center container">
+    <h1>Jogo de digitação</h1>
+
+    <body>
+        <p class="frase" id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eligendi sunt
+            maiores harum earum laborum iste. Magnam iusto alias quis distinctio numquam, blanditiis libero fuga illo,
+            tempora animi sunt officia.</p>
+
+        <ul>
+            <li>
+                <i class="small material-icons icones">description</i><span id="contadorDePalavras"></span></li>
+            <li>
+                <i class="small material-icons icones">query_builder</i><span id="sec">20 </span></li>
+        </ul>
+        <textarea name="" id="digitacao" cols="30" rows="10"></textarea>
+        <button id="reiniciar">Reiniciar</button>
+
+        <ul>
+            <li><span id="palavras"> </span> Numero de palavras</li>
+            <li><span id="letras"> </span>Numero de caracteres</li>
+        </ul>
+
+        <section class="placar">
+            <h3 class="center">Placar</h3>
+            <table class="centered bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>No. de palavras</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Marcos</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Marcos</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </body>
+</div>
+
+</html>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/script.js"></script>
