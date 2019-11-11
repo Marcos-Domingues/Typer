@@ -30,7 +30,6 @@ function contadorCampo() {
 
 //tempo e desabilitar o campo
 
-
 function iniciaCronometro() {
   var tempoRestante = $("#sec").text()
   digitacao.one("focus", function () {
@@ -40,6 +39,7 @@ function iniciaCronometro() {
       if (tempoRestante < 1) {
         clearInterval(limpa)
         finalizaJogo();
+        inserePlacar();
       }
     }, 1000);
   });
@@ -51,8 +51,6 @@ function inicializaMarcadores() {
   digitacao.on("input", function () {
     var digitado = digitacao.val();
     var comparavel = frase.substr(0, digitado.length);
-    console.log("Digitado:" + digitado);
-    console.log("Frase C.:" + comparavel);
     if (digitado == comparavel) {
       digitacao.addClass("borda-verde");
       digitacao.removeClass("borda-vermelha");
@@ -64,28 +62,14 @@ function inicializaMarcadores() {
 }
 
 function finalizaJogo() {
-  inserePlacar();
   digitacao.attr("disabled", true)
   digitacao.toggleClass("campo-desabilitado")
-
-}
-
-function inserePlacar() {
-  var corpoTabela = $(".placar").find("tbody");
-  var usuario = "Marcos";
-  var numPalavras = $("#palavras").text();
-  var linha = "<tr>" +
-    "<td>" + usuario + "</td>" +
-    "<td>" + numPalavras + "</td>" +
-    "</tr>";
-
-  corpoTabela.append(linha);
 }
 
 //reiniciar jogo
 function reiniciaJogo() {
   digitacao.attr("disabled", false);
-  digitacao.val(null);
+  digitacao.val("");
   $("#palavras").text("0");
   $("#letras").text("0");
   $("#sec").text(tempoInicial);
